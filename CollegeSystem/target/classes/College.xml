@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+           
+    <!-- Students Beans -->
+    <bean id="std1" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="101"/>
+        <property name="name" value="Hamjath"/>
+        <property name="mobile" value="9486459000"/>
+        <property name="dep" value="CSE"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="std2" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="102"/>
+        <property name="name" value="Hasan"/>
+        <property name="mobile" value="1234567890"/>
+        <property name="dep" value="CSE"/>
+        <property name="age" value="21"/>
+    </bean>   
+    
+    <bean id="std3" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="103"/>
+        <property name="name" value="Guru"/>
+        <property name="mobile" value="7539146280"/>
+        <property name="dep" value="IT"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="std4" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="104"/>
+        <property name="name" value="Pradeep"/>
+        <property name="mobile" value="1478523690"/>
+        <property name="dep" value="IT"/>
+        <property name="age" value="21"/>
+    </bean> 
+    
+    <bean id="std5" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="105"/>
+        <property name="name" value="Muthu"/>
+        <property name="mobile" value="9638521470"/>
+        <property name="dep" value="AIDS"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="std6" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="106"/>
+        <property name="name" value="Mani"/>
+        <property name="mobile" value="9874561230"/>
+        <property name="dep" value="AIDS"/>
+        <property name="age" value="21"/>
+    </bean> 
+    
+        <bean id="std7" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="107"/>
+        <property name="name" value="Ragu"/>
+        <property name="mobile" value="456789130"/>
+        <property name="dep" value="AIML"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="std8" class="com.tnsif.CollegeSystem.Students">
+        <property name="regno" value="108"/>
+        <property name="name" value="Ravi"/>
+        <property name="mobile" value="9514786230"/>
+        <property name="dep" value="AIML"/>
+        <property name="age" value="21"/>
+    </bean>  
+    
+    <!-- Department Beans -->
+    <bean id="dept1" class="com.tnsif.CollegeSystem.Department">
+        <property name="departmentName" value="CSE"/>
+        <property name="studentList">
+            <list>
+                <ref bean="std1"/>
+                <ref bean="std2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dept2" class="com.tnsif.CollegeSystem.Department">
+        <property name="departmentName" value="IT"/>
+        <property name="studentList">
+            <list>
+				<ref bean="std3"/>
+                <ref bean="std4"/>
+            </list>
+        </property>
+    </bean>
+    
+       <bean id="dept3" class="com.tnsif.CollegeSystem.Department">
+        <property name="departmentName" value="AIDS"/>
+        <property name="studentList">
+            <list>
+                <ref bean="std5"/>
+                <ref bean="std6"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dept4" class="com.tnsif.CollegeSystem.Department">
+        <property name="departmentName" value="AIML"/>
+        <property name="studentList">
+            <list>
+				<ref bean="std7"/>
+                <ref bean="std8"/>
+            </list>
+        </property>
+    </bean>
+    
+        <!-- Company Bean -->
+    <bean id="College" class="com.tnsif.CollegeSystem.College">
+        <property name="collegeName" value="IFET"/>
+        <property name="departmentList">
+            <list>
+                <ref bean="dept1"/>
+                <ref bean="dept2"/>
+                <ref bean="dept3"/>
+                <ref bean="dept4"/>
+            </list>
+        </property>
+    </bean>
+       
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+</beans>
