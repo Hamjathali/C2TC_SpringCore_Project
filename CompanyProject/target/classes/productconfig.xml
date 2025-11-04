@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Defining a bean for Product with ID "productOne" -->
+    <bean id="productOne" class="com.tnsif.autowirringXml.Product">
+        <property name="productId" value="101"/>
+        <property name="productName" value="Earphones"/>
+        <property name="price" value="900"/>
+    </bean>
+
+    <!-- Defining another Product bean with ID "productTwo" -->
+    <bean id="productTwo" class="com.tnsif.autowirringXml.Product">
+        <property name="productId" value="102"/>
+        <property name="productName" value="Charger"/>
+        <property name="price" value="600"/>
+    </bean>
+
+    <!-- Defining an extra Product bean with prototype scope -->
+    <bean id="productThree" class="com.tnsif.autowirringXml.Product" scope="prototype">
+        <property name="productId" value="103"/>
+        <property name="productName" value="Power Bank"/>
+        <property name="price" value="1200"/>
+    </bean>
+
+    <!-- Creating a list of products (productList) -->
+    <bean id="productList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="productOne"/>
+                <ref bean="productTwo"/>
+                <ref bean="productThree"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Defining a Cart bean that uses autowire byType -->
+    <bean id="cartByType" class="com.tnsif.autowirringXml.Cart" autowire="byType"/>
+
+    <!-- Defining another Cart bean that uses autowire byName -->
+    <bean id="cartByName" class="com.tnsif.autowirringXml.Cart" autowire="byName"/>
+
+    <!-- A normal Cart bean (manual wiring) -->
+    <bean id="cart" class="com.tnsif.autowirringXml.Cart">
+        <property name="productList" ref="productList"/>
+    </bean>
+
+</beans>
